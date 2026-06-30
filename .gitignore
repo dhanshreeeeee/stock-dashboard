@@ -1,0 +1,18 @@
+# Environment files containing real credentials -- never commit these
+.env
+.env.local
+.env.*.local
+
+# Dependencies -- reinstalled via npm install, never committed
+node_modules/
+
+# Build output -- regenerated on each deploy
+dist/
+build/
+
+# OS / editor noise
+.DS_Store
+*.log
+
+# Kite session (contains a live access token -- never commit)
+kite_session.json

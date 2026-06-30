@@ -1,4 +1,8 @@
-const BASE = "/api";
+// In production (Render), VITE_API_URL is set to the real backend URL,
+// e.g. https://stock-dashboard-backend-r6yb.onrender.com/api
+// Locally, this falls back to the Vite dev server's proxy at /api,
+// which forwards to localhost:4001 (see vite.config.js).
+const BASE = import.meta.env.VITE_API_URL || "/api";
 
 export async function fetchStocks(capTier) {
   const url = capTier ? `${BASE}/stocks?cap_tier=${capTier}` : `${BASE}/stocks`;
